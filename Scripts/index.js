@@ -19,30 +19,84 @@ signupbtn.addEventListener('click',()=>{
 })
 
 
-document.querySelector('.submitbtn').addEventListener('click',SignUp)
 
-let UserArr=localStorage.getItem('SignUp')|| [];
+
+
+
+
+document.getElementById('signup').addEventListener('click',SignUp)
+document.getElementById('login').addEventListener('click',loginvalidate)
+
+let UserArr=JSON.parse(localStorage.getItem("SignUp"))|| [];
 
 function SignUp(){
-
     let email=document.getElementById('email').value;
     let firstName=document.getElementById('first-name').value;
     let lastName=document.getElementById('last-name').value;
     let password=document.getElementById('Password').value;
+   
+    let marker = 0; 
+    UserArr.map(function (el) {
+      if (el.Email == email && el.Email != "") {
+        marker = 1; 
+      }
+    });
+    if (marker == 0) {
+      if (firstName == "" || email == "" || password == "") {
+        alert("Please enter details");
+      } else {
     
     
     let userObj= {
         email: email,
         firstName: firstName,
         lastName: lastName,
-        password: password
+        password: password,
+       
     }
 
     UserArr.push(userObj);
+    console.log(userObj);
+    localStorage.setItem("SignUp", JSON.stringify(UserArr));
+   
     alert('Sign Up Success');
-    localStorage.setItem("SignUp", JSON.stringify(userObj));
-    
 }
+    }
+    else {
+        alert("Account alredy exist"); 
+      }
+    };
+
+    
+    
+    
+
+
+function loginvalidate(){
+    let email=document.getElementById('loginemail').value;
+    let password=document.getElementById('loginpass').value;
+    let result = false;
+  if (email == "" || password == "") {
+    alert("Please enter correct details");
+  } else {
+    for (let i = 0; i < user.length; i++) {
+      if (UserArr[i].Email == email && UserArr[i].password == password) {
+        result = true;
+      }
+    }
+    if (result == true) {
+      alert("login sccessfull !");
+      location = "Quiz-result.html";
+    } else {
+      alert("Wrong Credentials");
+      
+    } 
+  }
+}
+
+
+
+
 
 
 

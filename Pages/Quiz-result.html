@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/Css/quiz.css">
+    <link rel="stylesheet" href="/css/quiz.css">
 </head>
 <body>
     <div class="wrapper">
@@ -16,34 +16,13 @@
                 <button class=" movebtn">Quiz</button>
              </div>
              <div class="cont quizForm quiz">
-			 <div class="quiz-container " id="Quiz">
-				<div class="quiz-header">
-				  <h2 id="question">Question Text</h2>
-				  <ul>
-					<li>
-					  <input type="radio" name="answer" id="a" class="answer">
-					  <label for="a" id="a_text">Answer</label>
-					</li>
-					<li>
-					  <input type="radio" name="answer" id="b" class="answer">
-					  <label for="b" id="b_text">Answer</label>
-					</li>
-					<li>
-					  <input type="radio" name="answer" id="c" class="answer">
-					  <label for="c" id="c_text">Answer</label>
-					</li>
-					<li>
-					  <input type="radio" name="answer" id="d" class="answer">
-					  <label for="d" id="d_text">Answer</label>
-					</li>
-				  </ul>
-				</div>
-				
-			  </div>
+				<div id="question-container" class="hide">
+					<!--Questions are appended inside this div using script-->
+				  </div>
 			
 				<div class="bottom">
-					<button id="submit" class="submitbtn">Submit</button>
-					<button id="skip" class="submitbtn">Skip</button>
+					<button id="submit" onclick="handleNext()" class="submitbtn">Submit</button>
+					<button id="skip" onclick="handleSkip()" class="submitbtn">Skip</button>
 					<!-- <button class="submitbtn skip">skip</button>
 					<button  id="submit" class="submitbtn next">Next</button> -->
 				   </div>
@@ -51,8 +30,16 @@
                            <!--login form starts-->
                 <div class="cont  result ">
 					<div id="btn-que">
-						
-					   
+						<table id="myReport">
+							<thead>
+								<th>Question</th>
+								<th>Correct Answer</th>
+								<th>Your Answer</th>
+							</thead>
+							<tbody id="body">
+								  <!--Table rows appended using scripts-->
+							</tbody>
+						</table>
 					</div>
 
                    
