@@ -1,4 +1,4 @@
-//Question database
+
 const quesDataBase = [
     {
         
@@ -94,7 +94,7 @@ const quesDataBase = [
     },
   ];
   
-  //i represents index
+
   let i = 0;
   const getQues = () => {
     document.getElementById("question-container").innerHTML = "";
@@ -187,7 +187,7 @@ const quesDataBase = [
     };
     
   
-    //Checks - user will not be able to go to next question without answering previous
+  
     if (!checked1 && !checked2 && !checked3 && !checked4) {
       alert("Please select any option to continue");
       return;
@@ -278,7 +278,7 @@ const quesDataBase = [
          
       }
       
-      // Result.innerHTML="Result Not Generated "
+     
       
   )
   quizbtn.addEventListener('click',()=>{
