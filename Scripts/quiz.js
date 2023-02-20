@@ -165,12 +165,12 @@ const quesDataBase = [
   };
   getQues();
   
-  let userResult = []; // userResult will store the response of user in local Storage
+  let userResult = [];
   
-  //Creating a global object score, keeping the total score of the user
+ 
   let score = 0;
   
-  //Handle next button functionality
+ 
   const handleNext = () => {
     let checked1 = document.getElementById("input1").checked;
     let checked2 = document.getElementById("input2").checked;
@@ -219,13 +219,15 @@ const quesDataBase = [
     if (i  == 10) {
       Quiz.innerHTML ="Please check your result"
       document.getElementById("submit").hidden = true;
-      // alert("Voilla, Quiz completed!! Fetching your report");
-      // location = "report.html"
+    
     }
     getQues();
   };
   var skip=0;
-  //Skip button functionality
+  
+
+
+
   const handleSkip = () => {
      skip++;
     i++;
